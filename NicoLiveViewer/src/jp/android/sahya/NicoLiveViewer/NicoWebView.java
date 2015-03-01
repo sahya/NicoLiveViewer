@@ -53,7 +53,7 @@ public class NicoWebView {
 		this.webview = webview;
 		
 		WebSettings settings=webview.getSettings();
-		settings.setPluginsEnabled(true);
+        //settings.setPluginsEnabled(true);
 		settings.setJavaScriptEnabled(true);
 		//settings.setBlockNetworkImage(true);
 		
@@ -65,14 +65,14 @@ public class NicoWebView {
 	}
 	
 	/**
-	 * ƒy[ƒW‚Ì“Ç‚İ‚İ‚ğ’Ê’m‚·‚éƒnƒ“ƒhƒ‰‚ğ“o˜^‚·‚é
+	 * ï¿½yï¿½[ï¿½Wï¿½Ì“Ç‚İï¿½ï¿½İ‚ï¿½Ê’mï¿½ï¿½ï¿½ï¿½nï¿½ï¿½ï¿½hï¿½ï¿½ï¿½ï¿½oï¿½^ï¿½ï¿½ï¿½ï¿½
 	 * @param onPageStartedHandler
 	 */
 	public void setOnPageStartedHandler(final Handler onPageStartedHandler){
 		this.onPageStartedHandler = onPageStartedHandler;
 	}
 	/**
-	 * ƒy[ƒW‚Ì“Ç‚İ‚İŠ®—¹‚ğ’Ê’m‚·‚éƒnƒ“ƒhƒ‰‚ğ“o˜^‚·‚é
+	 * ï¿½yï¿½[ï¿½Wï¿½Ì“Ç‚İï¿½ï¿½İŠï¿½ï¿½ï¿½ï¿½ï¿½Ê’mï¿½ï¿½ï¿½ï¿½nï¿½ï¿½ï¿½hï¿½ï¿½ï¿½ï¿½oï¿½^ï¿½ï¿½ï¿½ï¿½
 	 * @param onPageStartedHandler
 	 */
 	public void setOnPageFinishedHandler(final Handler onPageFinishedHandler){
@@ -139,7 +139,7 @@ public class NicoWebView {
     	}
     	
     	/** 
-    	 * ƒy[ƒW‚Ì“Ç‚İ‚İ‚ğ’Ê’m‚·‚é
+    	 * ï¿½yï¿½[ï¿½Wï¿½Ì“Ç‚İï¿½ï¿½İ‚ï¿½Ê’mï¿½ï¿½ï¿½ï¿½
     	 * @see android.webkit.WebViewClient#onPageStarted(android.webkit.WebView, java.lang.String, android.graphics.Bitmap)
     	 */
     	@Override
@@ -149,7 +149,7 @@ public class NicoWebView {
     	}
     	
     	/** 
-    	 * ƒy[ƒW‚Ì“Ç‚İ‚İŠ®—¹‚ğ’Ê’m‚·‚é
+    	 * ï¿½yï¿½[ï¿½Wï¿½Ì“Ç‚İï¿½ï¿½İŠï¿½ï¿½ï¿½ï¿½ï¿½Ê’mï¿½ï¿½ï¿½ï¿½
     	 * @see android.webkit.WebViewClient#onPageFinished(android.webkit.WebView, java.lang.String)
     	 */
     	@Override

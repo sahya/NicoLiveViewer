@@ -19,13 +19,13 @@ import android.widget.Toast;
 public class NicoLivePlayerActivity extends Activity {
 	private EditText email; 
 	private EditText password;
-	//’Êí‚ÌƒƒOƒCƒ“‚ğ‚·‚é
+	//é€šå¸¸ã®ãƒ­ã‚°ã‚¤ãƒ³ã‚’ã™ã‚‹
 	private Button btnLogin;
-	//ƒAƒ‰[ƒgóM—p‚ÌƒƒOƒCƒ“‚ğ‚·‚éi’Êí‚ÌƒƒOƒCƒ“‚µ‚½ƒAƒJƒEƒ“ƒg‚ÍƒƒOƒAƒEƒg‚·‚é‚±‚Æ‚Í‚È‚¢j
+	//ã‚¢ãƒ©ãƒ¼ãƒˆå—ä¿¡ç”¨ã®ãƒ­ã‚°ã‚¤ãƒ³ã‚’ã™ã‚‹ï¼ˆé€šå¸¸ã®ãƒ­ã‚°ã‚¤ãƒ³ã—ãŸã‚¢ã‚«ã‚¦ãƒ³ãƒˆã¯ãƒ­ã‚°ã‚¢ã‚¦ãƒˆã™ã‚‹ã“ã¨ã¯ãªã„ï¼‰
 	private Button btnLoginAlert;
-	//ó‘Ô•\¦AƒRƒƒ“ƒg•\¦	
+	//çŠ¶æ…‹è¡¨ç¤ºã€ã‚³ãƒ¡ãƒ³ãƒˆè¡¨ç¤º
 	private EditText etResponse;
-	//•\¦‚ğPassword‚©‚ç”Ô‘gID‚É‘‚«Š·‚¦‚Ä‚¢‚Ü‚·
+	//è¡¨ç¤ºã‚’Passwordã‹ã‚‰ç•ªçµ„IDã«æ›¸ãæ›ãˆã¦ã„ã¾ã™
 	private TextView tvPassword;
 	//
 	private CheckBox checkBox;
@@ -53,17 +53,17 @@ public class NicoLivePlayerActivity extends Activity {
         //
         nicoMesssage = new NicoMessage();
         nico = new NicoRequest(nicoMesssage);
-        // ƒ`ƒFƒbƒNƒ{ƒbƒNƒX‚ğİ’è‚µ‚Ü‚·
+        // ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹ã‚’è¨­å®šã—ã¾ã™
         new SaveCheckBox();
     }
 
     class SaveCheckBox implements View.OnClickListener {
     	public SaveCheckBox(){
-    		// ƒ`ƒFƒbƒNƒ{ƒbƒNƒX‚Ìƒ`ƒFƒbƒNó‘Ô‚ğİ’è‚µ‚Ü‚·
+    		// ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹ã®ãƒã‚§ãƒƒã‚¯çŠ¶æ…‹ã‚’è¨­å®šã—ã¾ã™
     		if (saveDataFile.canReadFile(getApplicationContext())){
-    			//ƒƒOƒCƒ“ƒf[ƒ^‚ª•Û‘¶‚³‚ê‚Ä‚¢‚ê‚ÎAƒ`ƒFƒbƒNƒ{ƒbƒNƒX‚Ìó‘Ô‚ğ•œŒ³‚·‚é
+    			//ãƒ­ã‚°ã‚¤ãƒ³ãƒ‡ãƒ¼ã‚¿ãŒä¿å­˜ã•ã‚Œã¦ã„ã‚Œã°ã€ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹ã®çŠ¶æ…‹ã‚’å¾©å…ƒã™ã‚‹
     			checkBox.setChecked(((NicoInfoData)saveDataFile.openFile(getApplicationContext())).isStore);
-    			//ƒ`ƒFƒbƒNƒ{ƒbƒNƒX‚ª•t‚¢‚ê‚¢‚ê‚ÎAƒ[ƒ‹‚ÆƒpƒXƒ[ƒh‚ğ•œŒ³‚·‚é
+    			//ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹ãŒä»˜ã„ã‚Œã„ã‚Œã°ã€ãƒ¡ãƒ¼ãƒ«ã¨ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’å¾©å…ƒã™ã‚‹
     			if (checkBox.isChecked()){
     				email.setText(NicoCrypt.decrypt(NicoKey.getKey(),
     						((NicoInfoData)saveDataFile.openFile(getApplicationContext())).mail));
@@ -73,11 +73,11 @@ public class NicoLivePlayerActivity extends Activity {
     		} else {
     			checkBox.setChecked(true);
     		}
-    		// ƒ`ƒFƒbƒNƒ{ƒbƒNƒX‚ªƒNƒŠƒbƒN‚³‚ê‚½‚ÉŒÄ‚Ño‚³‚ê‚éƒR[ƒ‹ƒoƒbƒNƒŠƒXƒi[‚ğ“o˜^‚µ‚Ü‚·
+    		// ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹ãŒã‚¯ãƒªãƒƒã‚¯ã•ã‚ŒãŸæ™‚ã«å‘¼ã³å‡ºã•ã‚Œã‚‹ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ãƒªã‚¹ãƒŠãƒ¼ã‚’ç™»éŒ²ã—ã¾ã™
     		checkBox.setOnClickListener(this);
     	}
     	public void onClick(View v) {
-    		// ƒ`ƒFƒbƒNƒ{ƒbƒNƒX‚Ìƒ`ƒFƒbƒNó‘Ô‚ğæ“¾‚µ‚Ü‚·
+    		// ãƒã‚§ãƒƒã‚¯ãƒœãƒƒã‚¯ã‚¹ã®ãƒã‚§ãƒƒã‚¯çŠ¶æ…‹ã‚’å–å¾—ã—ã¾ã™
     		Toast.makeText(v.getContext(),
     				"onClick():" + String.valueOf(checkBox.isChecked()),
     				Toast.LENGTH_SHORT).show();
@@ -85,16 +85,16 @@ public class NicoLivePlayerActivity extends Activity {
     }
     
     /**
-     * Loginˆ—
+     * Loginå‡¦ç†
      */
     class Login implements OnClickListener, Handler.Callback, Runnable {
 		final Handler handler = new Handler(this);
 		
     	public void onClick(View v) {
-	    	//ƒƒOƒCƒ“ƒ{ƒ^ƒ“‚ğdisable‚É‚·‚é
+	    	//ãƒ­ã‚°ã‚¤ãƒ³ãƒœã‚¿ãƒ³ã‚’disableã«ã™ã‚‹
 	    	btnLogin.setEnabled(false);
 	    	btnLoginAlert.setEnabled(false);
-			key();    			
+			/*key();*/
 			new Thread(this).start();
 		}
     	public void run() {
@@ -105,25 +105,25 @@ public class NicoLivePlayerActivity extends Activity {
     	
 		public boolean handleMessage(Message arg0) {
 			if (nico.isLogin()){
-				//ƒ`ƒFƒbƒN‚ª•t‚¢‚Ä‚¢‚ê‚ÎƒƒOƒCƒ“ƒf[ƒ^‚ğ•Û‘¶‚·‚é
+				//ãƒã‚§ãƒƒã‚¯ãŒä»˜ã„ã¦ã„ã‚Œã°ãƒ­ã‚°ã‚¤ãƒ³ãƒ‡ãƒ¼ã‚¿ã‚’ä¿å­˜ã™ã‚‹
 				saveNicoInfoData();
 				
-				tvPassword.setText("”Ô‘gID");
+				tvPassword.setText("ï¿½Ô‘gID");
 				password.setText("lv");
 				password.setInputType(InputType.TYPE_CLASS_NUMBER);
 				btnLogin.setVisibility(View.GONE);
 				btnLoginAlert.setVisibility(View.GONE);
-				Toast.makeText(getApplicationContext(), "ƒƒOƒCƒ“‚µ‚Ü‚µ‚½", Toast.LENGTH_SHORT).show();
-				// ƒCƒ“ƒeƒ“ƒg‚ÌƒCƒ“ƒXƒ^ƒ“ƒX¶
+				Toast.makeText(getApplicationContext(),  "ãƒ­ã‚°ã‚¤ãƒ³ã—ã¾ã—ãŸ", Toast.LENGTH_SHORT).show();
+				// ã‚¤ãƒ³ãƒ†ãƒ³ãƒˆã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ç”Ÿ
 				Intent intent = new Intent(getApplicationContext(), NicoMainviewActivity.class);
-				// Ÿ‰æ–Ê‚ÌƒAƒNƒeƒBƒrƒeƒB‹N“®
+				// æ¬¡ç”»é¢ã®ã‚¢ã‚¯ãƒ†ã‚£ãƒ“ãƒ†ã‚£èµ·å‹•
 				NicoWebView nwv = new NicoWebView(nico.getCookieStore());
 				intent.putExtra("LoginCookie", nwv.getLoginCookie());
 				startActivity(intent);
 				finish();
 			}else{
-				Toast.makeText(getApplicationContext(), "ƒƒOƒCƒ“‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½", Toast.LENGTH_SHORT).show();
-				//ƒƒOƒCƒ“ƒ{ƒ^ƒ“‚ğenable‚É‚·‚é
+				Toast.makeText(getApplicationContext(), "ãƒ­ã‚°ã‚¤ãƒ³ã§ãã¾ã›ã‚“ã§ã—ãŸ", Toast.LENGTH_SHORT).show();
+                //ãƒ­ã‚°ã‚¤ãƒ³ãƒœã‚¿ãƒ³ã‚’enableã«ã™ã‚‹
 		    	btnLogin.setEnabled(true);
 		    	btnLoginAlert.setEnabled(true);
 			}
@@ -153,14 +153,14 @@ public class NicoLivePlayerActivity extends Activity {
     }
 
     /**
-     * LoginAlertˆ—
+     * LoginAlert????
      */
     class LoginAlert implements OnClickListener, Handler.Callback ,OnReceiveListener, Runnable {
     	final Handler handler = new Handler(this);
     	
     	public void onClick(View v) {
-    		key();
-    		//ƒƒOƒCƒ“ƒ{ƒ^ƒ“‚ğdisable‚É‚·‚é
+    		/*key();*/
+    		//???O?C???{?^????disable?????
         	btnLogin.setEnabled(false);
         	btnLoginAlert.setEnabled(false);
  
@@ -182,8 +182,8 @@ public class NicoLivePlayerActivity extends Activity {
     			btnLogin.setVisibility(View.GONE);
     			btnLoginAlert.setVisibility(View.GONE);
     		}else{
-    			Toast.makeText(getApplicationContext(), "ƒAƒ‰[ƒgƒƒOƒCƒ“‚É¸”s‚µ‚Ü‚µ‚½", Toast.LENGTH_SHORT).show();
-    			//ƒƒOƒCƒ“ƒ{ƒ^ƒ“‚ğenable‚É‚·‚é
+    			Toast.makeText(getApplicationContext(), "?A???[?g???O?C??????s???????", Toast.LENGTH_SHORT).show();
+    			//???O?C???{?^????enable?????
     	    	btnLogin.setEnabled(true);
     	    	btnLoginAlert.setEnabled(true);
     		}
@@ -195,20 +195,22 @@ public class NicoLivePlayerActivity extends Activity {
 		}	
     }
     
+    /*
     private void key(){
     	InputMethodManager mgr = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         mgr.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
     }
+    */
 	
 	@Override
 	protected void onNewIntent(Intent intent) {
 		super.onNewIntent(intent);
 
 		if( intent != null ) {
-			/** ƒŠƒ“ƒNæ‚ÌURL‚ğæ“¾‚·‚éB */
+			/** ?????N???URL?????????B */
 			String data = intent.getDataString();
 			if(data != null){
-				//url‚ğŒ³‚É‚²‚É‚å‚²‚É‚å
+				//url??????????????
 			}
 		}
 	}
